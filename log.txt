@@ -1,0 +1,66 @@
+My Tweetactually this is 20! gg
+Date: Fri Jun 23 06:17:42 +0000 2017
+My Tweet18
+Date: Fri Jun 23 06:17:34 +0000 2017
+My Tweettweet
+Date: Fri Jun 23 06:17:18 +0000 2017
+My Tweethello its 2017
+Date: Fri Jun 23 06:17:09 +0000 2017
+My Tweeta;ldjsfl;ajsdf;ljkasdf
+Date: Fri Jun 23 06:17:02 +0000 2017
+My TweetI would buy an exotic planet with 100k
+Date: Fri Jun 23 06:16:56 +0000 2017
+My Tweetwhat would you do with $100k?
+Date: Fri Jun 23 06:16:23 +0000 2017
+My TweetHere's my life on the internet! PLEASE CHECK IT OUT!
+Date: Fri Jun 23 06:15:47 +0000 2017
+My Tweetneed 10 more of these, TWEETS
+Date: Fri Jun 23 06:15:20 +0000 2017
+My TweetSocial lives constrained to DIVs and panels.
+Date: Fri Jun 23 06:13:57 +0000 2017
+My TweetSocial media is destroying our social lives.
+Date: Fri Jun 23 06:13:13 +0000 2017
+My Tweetbought a fire proof race suit. looking for love.
+Date: Fri Jun 23 06:12:02 +0000 2017
+My TweetI once loved and got burned...
+Date: Fri Jun 23 06:11:44 +0000 2017
+My Tweetif life throws a curve ball, try not to get hit by it.
+Date: Fri Jun 23 06:11:03 +0000 2017
+My Tweetif you trip and fall. take a break or even a nap. You won't have another one for awhile because you're awesome at life.
+Date: Fri Jun 23 06:07:55 +0000 2017
+My TweetAlways strive the best and don't settle for less.
+Date: Fri Jun 23 06:06:40 +0000 2017
+My TweetAnd the Day after even better.
+Date: Fri Jun 23 06:06:24 +0000 2017
+My TweetTomorrow will be better.
+Date: Fri Jun 23 06:06:17 +0000 2017
+My TweetToday was a good day.
+Date: Fri Jun 23 06:06:09 +0000 2017
+My Tweet@agentvdizzle You da man.
+Date: Fri Jun 23 06:05:44 +0000 2017
+Band Name: The Beatles
+Song Name: Hey Jude - Remastered 2015
+Album Name: 1 (Remastered)
+Spotify Link: https://api.spotify.com/v1/search?query=+hey+jude&type=track&offset=0&limit=20
+Band Name: Ace of Base
+Song Name: The Sign
+Spotify Link: https://api.spotify.com/v1/search?query=The+Sign+Ace&type=track&offset=0&limit=20
+Album Name: The Sign (US Album) [Remastered]
+Title of the Movie: The Fast and the Furious
+Year the movie came out: 2001
+IMDB Rating of the movie: 6.7
+Language of the Movie: English
+Country where the movie was produced: USA, Germany
+Plot of the movie: Los Angeles police officer Brian O'Connor must decide where his loyalty really lies when he becomes enamored with the street racing world he has been sent undercover to destroy.
+Actors in the movie: Paul Walker, Vin Diesel, Michelle Rodriguez, Jordana Brewster
+Rotten Tomatoes URLhttp://www.thefastandthefurious.com
+If you haven't watched 'Mr. Nobody', then you should: http://www.imdb.com/title/tt0485947/
+It's on Netflix!
+spotify-this-song,"I Want it That Way"
+
+string array: spotify-this-song,"I Want it That Way"
+
+Band Name: Backstreet Boys
+Song Name: I Want It That Way
+Album Name: The Hits--Chapter One
+Spotify Link: https://api.spotify.com/v1/search?query=%22I+Want+it+That+Way%22%0A&type=track&offset=0&limit=20

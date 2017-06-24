@@ -17,18 +17,32 @@ for (var i = 3; i < nodeArgs.length; i++) {
   userSearch = userSearch + " " + nodeArgs[i];
 }
 
+commands(input);
 
-switch(input){
-	case "my-tweets" : 
-		myTweets();
-		break;
-	case "spotify-this-song":
-		searchSpotify(userSearch);
-		break;
-	case "movie-this":
-		searchMovie(userSearch);
+//=================================================================
+// switch case takes input commmand prompt and call functions
+//=================================================================
 
+function commands(input){
+	switch(input){
+		case "my-tweets" : 
+			myTweets();
+			break;
+		case "spotify-this-song":
+			searchSpotify(userSearch);
+			break;
+		case "movie-this":
+			searchMovie(userSearch);
+			break;
+		case "do-what-it-says":
+			doWhatItSays();
+			break;
+	}
 }
+
+//=================================================================
+// My tweets function
+//=================================================================
 
 function myTweets(){
 	var Twitter = require('twitter');
@@ -46,12 +60,19 @@ function myTweets(){
 	  		for(var i = 0 ; i< 20 ; i++){
 		    	console.log("My Tweet" + tweets[i].text);
 		    	console.log("Date: " +  tweets[i].created_at)
+		    	log("My Tweet" + tweets[i].text);
+		    	log("Date: " +  tweets[i].created_at)
 			}	
 	  	}else{
 	  		console.log("ERROR LOADING TWITTER!")
+	  		log("ERROR LOADING TWITTER!")
 	  	}
 	});
 }
+
+//=================================================================
+// Spotify search function
+//=================================================================
 
 function searchSpotify(search){
 	var Spotify = require('node-spotify-api');
@@ -69,9 +90,17 @@ function searchSpotify(search){
 			console.log("Song Name: "+ data.tracks.items[0].name);
 			console.log("Album Name: " + data.tracks.items[0].album.name);
 			console.log("Spotify Link: " + data.tracks.href);
+			log("Band Name: " + data.tracks.items[0].artists[0].name);
+			log("Song Name: "+ data.tracks.items[0].name);
+			log("Album Name: " + data.tracks.items[0].album.name);
+			log("Spotify Link: " + data.tracks.href);
 	  	}
 	});
 }
+
+//=================================================================
+// Movie search function
+//=================================================================
 
 function searchMovie(search){
 	var request = require('request');
@@ -79,30 +108,70 @@ function searchMovie(search){
 		var movie = JSON.parse(body);  
 	  	
 		if(error){
-	  		console.log('error:', error); // Print the error if one occurred 
-	  		//console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received 
+	  		console.log('error:', error); 
+	  		log('error:', error);
 	  	}
 	  	if(movie.Title == null){
 	  		console.log("If you haven't watched 'Mr. Nobody', then you should: http://www.imdb.com/title/tt0485947/" );
 	  		console.log("It's on Netflix!")
+	  		log("If you haven't watched 'Mr. Nobody', then you should: http://www.imdb.com/title/tt0485947/" );
+	  		log("It's on Netflix!");
 	  	}else{
-	  	 
+			console.log("Title of the Movie: " + movie.Title )
+			console.log("Year the movie came out: " + movie.Year)
+			console.log("IMDB Rating of the movie: " + movie.imdbRating)
+			console.log("Country where the movie was produced: " + movie.Country)
+			console.log("Language of the Movie: " + movie.Language)
+			console.log("Plot of the movie: " + movie.Plot)
+			console.log("Actors in the movie: " + movie.Actors)
+			console.log("Rotten Tomatoes URL" + movie.Website)
 
-		console.log("Title of the Movie: " + movie.Title )
-		console.log("Year the movie came out: " + movie.Year)
-		console.log("IMDB Rating of the movie: " + movie.imdbRating)
-		console.log("Country where the movie was produced: " + movie.Country)
-		console.log("Language of the Movie: " + movie.Language)
-		console.log("Plot of the movie: " + movie.Plot)
-		console.log("Actors in the movie: " + movie.Actors)
-		console.log("Rotten Tomatoes URL" + movie.Website)
-	}
+			log("Title of the Movie: " + movie.Title )
+			log("Year the movie came out: " + movie.Year)
+			log("IMDB Rating of the movie: " + movie.imdbRating)
+			log("Country where the movie was produced: " + movie.Country)
+			log("Language of the Movie: " + movie.Language)
+			log("Plot of the movie: " + movie.Plot)
+			log("Actors in the movie: " + movie.Actors)
+			log("Rotten Tomatoes URL" + movie.Website)
+		}
 	});
-
 }
 
+//=================================================================
+//  Do what it says function
+//=================================================================
 
+function doWhatItSays(){
+	var fs = require('fs')
+	fs.readFile('random.txt', 'utf8', function (err,data) {
+	  	if (err) {
+	    	return 
+	    		console.log(err);
+	    		log(err);
+	  	}
+	  	console.log(data);
+	  	log(data);
+	 	var stringArray = data.split(',');
+	 	console.log("string array: " + stringArray);
+	 	log("string array: " + stringArray)
+	 	userSearch = stringArray[1];
+	 	commands(stringArray[0]);
+    });
+}
 
+//=================================================================
+// Log Function
+//=================================================================
+
+function log(printToLog){
+	var fs = require('fs');
+
+	fs.appendFile('log.txt', printToLog+ "\n", function (err) {
+	 	if (err) throw err;
+	 
+	});
+}
 
 })()
 
